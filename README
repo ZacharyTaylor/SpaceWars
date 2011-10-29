@@ -1,0 +1,135 @@
+================================================================================
+
+====================        SpaceWars game        ==============================
+====================        kjb146 & zjt14        ==============================
+
+SpaceWars is based off the original spacewar game with several key differences
+-There are multiple galaxies that can be hyperspaced between
+-Each galaxy has up to 4 suns of random size and location
+-The game is networked with no limit on the number of maximum players
+
+
+====================         HOW TO BUILD         ==============================
+
+Easiest: use the NetBeans Project associated with this project
+
+Next Easiest:
+bring a terminal to the "Client" directory, and build using ant.
+Targets accepted include: "", "compile", "run", "javadoc", "clean"
+
+after the project has built, run the following command from the "SpaceWars"
+directory
+
+java -Djava.library.path=./lib/lwjgl/native -jar ./dist/SpaceWars.jar
+
+The directory is important to maintain internal relative references.
+
+
+====================    The Spacewars Launcher    ==============================
+
+When first started the launcher is displayed from here the user can create a
+server or join an existing one
+
+To join an existing server wait until it is created then hit update server list
+The server should now be displayed in the available servers pane
+To join it select it and hit connect or double click it
+
+To create a new server hit start new server type in a name and hit OK. the
+server should be created and should be able to be joined as outlined above.
+To stop the server hit the stop server button.
+
+Once connected a new window should appear displaying the current galaxy and
+your ship
+
+
+====================            The HUD           ==============================
+
+Your stats are displayed in the bottom left
+Shield strength is shown in green
+Fuel in orange (1 bar = 40 fuel)
+Missiles in white
+
+
+====================           Controls           ==============================
+
+Fire =  space bar
+Left = left arrow
+Right = right arrow
+Accelerate = up arrow
+Hyperspace = m
+Respawn = enter
+
+
+====================           The Game           ==============================
+
+Your objective is to avoid stars, missiles, enemies and debris while shooting
+missiles to destroy your opponents. The ships can take 5 hits before being
+destroyed and on destruction they become debris that can take a further 5 hits. 
+
+All enemies appear as one type of spacecraft and you as another.
+Each ship has a limited number of missiles, fuel and shields
+
+Shield strength is lost where your ship comes in contact with something 
+(including your own missiles). The ship starts with 5 shields. Your shield
+strength and the enemy's can be seen from the colour (color -sic) of the shields 
+
+ 5 = white
+ 4 = blue
+ 3 = green
+ 2 = yellow
+ 1 = red
+
+Fuel is used to turn, accelerate and hyperspace. The ships start with 2000
+	turning uses 1 fuel
+	accelerating uses 10 fuel
+	hyperspace uses 100 fuel
+	
+Missiles are used when you fire them. The ship starts with 50 and can fire 5
+a second
+
+
+====================       Hyperspace rules       ==============================
+
+When first spawned a player will be in their own galaxy
+
+On hyperspace a random galaxy that is not the one you came from is selected. 
+If there is less than 4 other players you are placed in it. If it has more 
+then this or there is only one galaxy a new one is created and you enter this 
+galaxy If the one you left is now empty of players it is removed
+
+hyperspacing has a 1 second cool-down between uses
+
+in hyperspacing you maintain your speed and heading but your position changes.
+You will never collide with a mass on exiting hyperspace but you may be very
+close to and heading towards one. This is the
+risk of hyperspacing
+
+When respawning the player has a new ship hyperspaced in
+
+
+==================== Contributions from other sources ==========================
+
+Code based off original game by Dr. Allan McInnes
+
+JPCT library
+http://www.jpct.net/
+
+Client setup and keymapper influenced by 
+http://www.jpct.net/wiki/index.php/Advanced_example
+
+Icons from 
+http://starcraft.wikia.com/wiki/StarCraft_Wiki
+
+3D ship models by Angryfly 
+http://www.turbosquid.com/Search/Artists/Angryfly
+
+Player model source 
+http://www.turbosquid.com/FullPreview/Index.cfm/ID/526437
+
+Enemy model source 
+http://www.turbosquid.com/FullPreview/Index.cfm/ID/588767
+
+Backgrounds found using "google image search" for "space"
+
+================================================================================
+================================================================================
